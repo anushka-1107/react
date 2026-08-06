@@ -1,0 +1,13 @@
+.Container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: rgb(9, 73, 94);
+}
+.Content {
+  background: rgb(41, 4, 4);
+  padding: 10px;
+  border-radius: 20px;
+  text-align: center;
+}

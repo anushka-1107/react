@@ -1,0 +1,27 @@
+.primary_btn{
+    padding: 18px 10px;
+    background-color: black;
+    color: aliceblue;
+    min-width: 220px;
+    display: flex;
+    font-size: 20px;
+    align-items: center;
+    gap: 8px;
+    border-radius:5px;
+    justify-content: center;
+}
+
+.next_btn{
+    padding: 18px 10px;
+    border: 1px solid black;
+    color: black;
+    min-width: 220px;
+    display: flex;
+    font-size: 20px;
+    align-items: center;
+    gap: 8px;
+    border-radius:5px;
+    justify-content: center;
+    width: 100%;
+
+}

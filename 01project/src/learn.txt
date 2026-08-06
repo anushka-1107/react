@@ -1,0 +1,22 @@
+function App() {
+ 
+ const[colors,setColors] = useState(['red','blue'])
+ const add =() =>{
+ setColors([...colors,'green'])
+ }
+ return(
+  <>
+  <ul>{
+  colors.map((colors,index)=>(
+    <li key = {index}>{colors}</li>
+  )
+  )
+}</ul>
+
+<span>
+  <button onClick={add}>add</button>
+</span>
+</>
+ )
+}
+export default App
