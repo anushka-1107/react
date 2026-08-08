@@ -5,13 +5,19 @@ import './App.css'
 
 function App() {
 
-const url = "https://dummyjson.com/users?page=1&limit=6"
+  const [page, setPage] = useState(1);
 
+const skip = (page - 1) * 6;
+
+    const url = `https://dummyjson.com/users?limit=6&skip=${skip}`;
 
   const [data, setData] = useState([])
+ 
+
+  
   useEffect(() => {
     fetchData()
-  },[])
+  },[page])
 
 async function fetchData() {
   let data = await fetch(url)
@@ -25,10 +31,10 @@ return (
 <div className="container mt-4 bg-dark text-white">
   <div className="row">
     {data.map((user,id) => (
-      <div className="col-md-4 mb-4 bg-dark text-white" key={user.id}>
-        <div className="card h-100 shadow p-3 mb-5 bg-white rounded">
-          <div className="card-body">
-            <h5 className="card-title">
+      <div className="col-md-4 mb-4 bg-dark text-white cursor-pointer">
+        <div className="card h-100 shadow p-3 mb-5 bg-white rounded ">
+          <div className="card-body ">
+            <h5  key={user.id} className="card-title">
               {user.firstName} {user.lastName}
             </h5>
             <p className="card-text">
@@ -44,7 +50,7 @@ return (
   </div>
 </div>
 <div>
-  <Pagination />
+  <Pagination page={page} setPage={setPage} />
 
 </div>
   </>
