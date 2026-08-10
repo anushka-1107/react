@@ -1,0 +1,82 @@
+/* Basic Employee Management System Custom Styles */
+
+:root {
+  --sidebar-width: 260px;
+}
+
+body {
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  background-color: #f4f6f9;
+  color: #212529;
+}
+
+/* Sidebar layout styling */
+.sidebar-container {
+  width: var(--sidebar-width);
+  min-height: calc(100vh - 60px);
+  flex-shrink: 0;
+  background: #1e293b !important; /* Modern Slate Dark */
+}
+
+@media (max-width: 768px) {
+  .sidebar-container {
+    width: 200px;
+  }
+}
+
+@media (max-width: 576px) {
+  .sidebar-container {
+    width: 70px;
+    padding: 0.75rem !important;
+  }
+  .sidebar-container span,
+  .sidebar-container .text-uppercase,
+  .sidebar-container small,
+  .sidebar-container p {
+    display: none !important;
+  }
+  .sidebar-container i {
+    margin-right: 0 !important;
+    font-size: 1.25rem !important;
+  }
+}
+
+/* Navigation Hover & Transitions */
+.transition-all {
+  transition: all 0.2s ease-in-out;
+}
+
+.hover-bg-secondary:hover {
+  background-color: rgba(255, 255, 255, 0.08);
+  color: #ffffff !important;
+}
+
+/* Main Content Area */
+.main-content {
+  background-color: #f8fafc;
+  min-height: calc(100vh - 60px);
+}
+
+/* Table Hover Effects */
+.table-hover tbody tr:hover {
+  background-color: #f1f5f9;
+}
+
+/* Custom Modal Backdrop Overlay */
+.tab-modal-backdrop {
+  backdrop-filter: blur(3px);
+}
+
+/* Button & Card Micro-Interactions */
+.card {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.08) !important;
+}
+
+/* Badge font fix */
+.font-sans {
+  font-family: inherit;
+}
