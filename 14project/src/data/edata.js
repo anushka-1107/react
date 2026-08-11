@@ -1,16 +1,20 @@
 import {createSlice, nanoid} from '@reduxjs/toolkit'
 
- initialState:{
-    Empdata: [
+
+const savedemployees= JSON.parse(localStorage.getItem("employees")) || []
+
+
+ const initialState={
+    Empdata: savedemployees.length?savedemployees: [
         {
-            id:1001,
+            id:1,
     name:"Ritesh",
     email:"ritesh@123.com",
     mobileno:1234567890 ,
     department:"IT",
     position:"AI Engineer",
     joining:'2026-06-05',
-    salary: 20000}]
+    salary: 20000},]
  }
  
  const employeeSlice = createSlice({
@@ -19,22 +23,25 @@ import {createSlice, nanoid} from '@reduxjs/toolkit'
     reducers:{
         addEmp:(state, action)=>{
              const emp = {
+                 ...action.payload,
                 id: nanoid(),
-                name:"Ritesh",
-        email:"ritesh@123.com",
-         mobileno:1234567890 ,
-        department:"IT",
-        position:"AI Engineer",
-        joining:'2026-06-05',
-        salary: 20000,
+                
             }
             state.Empdata.push(emp)
+
+            localStorage.setItem('employees',JSON.stringify(state.Empdata))
         }
 
     }
 }
 
  )
+
+
+
+export const {addEmp} = employeeSlice.actions
+
+export default employeeSlice.reducer
  
  
  

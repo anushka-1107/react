@@ -1,10 +1,12 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
-import detail from '../data/edata'
+import { useSelector } from 'react-redux'
 
 const Employee = () => {
    
 const nav = useNavigate()
+
+const detail = useSelector((state)=>state.emp.Empdata)
 
   return (
     <div className='container'>
